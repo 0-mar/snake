@@ -1,11 +1,10 @@
-import os
 import pygame
 import json
 
 
 class ControlsManager:
     def __init__(self):
-        self.controls_file_name = 'controls.json'
+        self.controls_file_name = 'data/controls.json'
         self.controls = self.load_controls()
 
     def load_controls(self):
@@ -19,7 +18,6 @@ class ControlsManager:
         return controls
 
     def load_existing_controls(self):
-        #with open(os.path.join(self.controls_file_name), 'r+') as file:
         with open(self.controls_file_name, 'r+') as file:
             controls = json.load(file)
         return controls
@@ -29,6 +27,5 @@ class ControlsManager:
         return new_controls
 
     def write_controls(self, data):
-        #with open(os.path.join(os.getcwd(), self.controls_file_name), 'w') as file:
         with open(self.controls_file_name, 'w') as file:
             json.dump(data, file)

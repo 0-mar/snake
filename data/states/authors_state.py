@@ -14,7 +14,7 @@ class AuthorsState(state.State):
         self.original_michal_img = pygame.image.load("data/assets/background/gej.png")
 
         # load sounds
-        self.ondra_sound = pygame.mixer.Sound("data/assets/sounds/ondra.mp3")
+        # self.ondra_sound = pygame.mixer.Sound("data/assets/sounds/ondra.mp3")
 
         self.ondra_img = self.original_ondra_img
         self.michal_img = self.original_michal_img
@@ -26,7 +26,7 @@ class AuthorsState(state.State):
 
         self.resize(self.game.screen_width, self.game.screen_height)
 
-        self.ondra_sound.play(fade_ms=1000)
+        #self.ondra_sound.play(fade_ms=1000)
 
     def update(self, time_passed):
         if self.back_btn.update():
@@ -57,7 +57,7 @@ class AuthorsState(state.State):
         self.ui_height = self.back_btn.rect.bottom
 
     def exit_state(self):
-        self.ondra_sound.stop()
+        #self.ondra_sound.stop()
         super(AuthorsState, self).exit_state()
 
 
